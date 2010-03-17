@@ -1,3 +1,4 @@
+require 'active_support'
 require 'active_support/inflector'
 class RDoc::ArAssociation < RDoc::Context
   include RDoc::TokenStream
@@ -16,7 +17,7 @@ class RDoc::ArAssociation < RDoc::Context
   
   def class_name
     class_name   = opts[:class_name]
-    class_name ||= Inflector.classify(name) if ['has_many', 'has_and_belongs_to_many'].include?(atype.to_s)
+    class_name ||= ActiveSupport::Inflector.classify(name) if ['has_many', 'has_and_belongs_to_many'].include?(atype.to_s)
     class_name ||= name.camelize
     class_name
   end

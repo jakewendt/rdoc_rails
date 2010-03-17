@@ -37,6 +37,16 @@ But the infrastructure is all there to make it straightforward to parse
 additional features in Rails code and generate documentation based on those
 parsings.
 
+== Suggested Features
+
+* named_scope parsing
+* validate_* parsing
+* before_* parsing
+* after_* parsing
+* attr_protected parsing
+* attr_accessible parsing
+* custom user grouping and parsing (probably more core rdoc)
+
 == Contributing
 I will try to document things better to make it easy for others to contribute
 additional documentation features. For now, get in touch if you have any

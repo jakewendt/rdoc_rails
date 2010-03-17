@@ -5,6 +5,8 @@ require 'active_support/test_case'
 require 'active_record'
 
 require 'tasks/testing'
+$: << File.expand_path(File.dirname(__FILE__) + "/../lib/" )
+require 'rdoc_rails'
 
 $: << File.expand_path(File.dirname(__FILE__) + "/app/models/" )
 %w( user blog post comment ).each{|m| require m }
@@ -37,5 +39,23 @@ $: << File.expand_path(File.dirname(__FILE__) + "/app/models/" )
 
 
 class ActiveSupport::TestCase
+
+end
+
+
+Rake::Task.class_eval do 
+
+	#	For some reason, a blank prerequisite is added
+	#	which causes
+	#	RuntimeError: Don't know how to build task ''
+	#	so I make sure that they are gone
+	def invoke_prerequisites_with_compressing(
+		task_args, invocation_chain)
+		@prerequisites.delete_if{|a|a.blank?}	# || a =~ /\A\s*\z/ }
+		invoke_prerequisites_without_compressing(
+			task_args, invocation_chain
+		)
+	end
+	alias_method_chain :invoke_prerequisites, :compressing
 
 end

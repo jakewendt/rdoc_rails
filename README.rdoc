@@ -47,6 +47,10 @@ parsings.
 * attr_accessible parsing
 * custom user grouping and parsing (probably more core rdoc)
 
+== Tests
+
+Tests are indevelopment
+
 == Contributing
 I will try to document things better to make it easy for others to contribute
 additional documentation features. For now, get in touch if you have any

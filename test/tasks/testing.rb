@@ -1,6 +1,6 @@
-require 'rdoc'
-require 'rake'
-require 'rake/testtask'
+#require 'rdoc'
+#require 'rake'
+#require 'rake/testtask'
 require 'rake/rdoctask'
 require File.dirname(__FILE__) + '/../../lib/rdoc_rails'
 

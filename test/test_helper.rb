@@ -24,8 +24,10 @@ $: << File.expand_path(File.dirname(__FILE__) + "/app/models/" )
 #		end
 #		create_table :posts do |t|
 #			t.references :blog
+#			t.references :user
 #		end
 #		create_table :comments do |t|
+#			t.references :commenter
 #			t.references :commentable, :polymorphic => true
 #		end
 #	end
@@ -59,3 +61,26 @@ Rake::Task.class_eval do
 	alias_method_chain :invoke_prerequisites, :compressing
 
 end
+
+
+RDoc::Generator::Railsfish.class_eval do
+	def generate_class_files
+		debug_msg "Generating class documentation in #@outputdir"
+
+		#	The pathname ends up being incorrect by "../."
+		#	That's all it takes and since there is not apparent
+		#	variable, I just override the method for testing.
+
+		templatefile = Pathname.new("../../lib/rdoc_rails/rdoc/generator/template/railsfish/classpage.rhtml") 
+
+		@classes.each do |klass|
+			debug_msg "  working on %s (%s)" % [ klass.full_name, klass.path ]
+			outfile    = @outputdir + klass.path
+			rel_prefix = @outputdir.relative_path_from( outfile.dirname )
+			svninfo    = self.get_svninfo( klass )
+			debug_msg "  rendering #{outfile}"
+			self.render_template( templatefile, binding(), outfile )
+		end
+	end
+end
+

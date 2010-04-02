@@ -50,7 +50,7 @@ parsings.
 == Tests
 
 * Tests are in development
-*	Both tests for Comment model's belongs_to associations fail
+* Both tests for Comment model's belongs_to associations fail
   * one is polymorphic
   * the other has a redefined class_name and counter_cache => true
 * tests run, but I don't parsed the output yet

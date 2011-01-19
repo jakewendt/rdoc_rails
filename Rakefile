@@ -25,3 +25,28 @@ Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.rdoc_files.include('README.rdoc')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
+
+
+begin
+	require 'jeweler'
+	Jeweler::Tasks.new do |gem|
+		gem.name = "jakewendt-rdoc_rails"
+		gem.summary = %Q{one-line summary of your gem}
+		gem.description = %Q{longer description of your gem}
+		gem.email = "github@jakewendt.com"
+		gem.homepage = "http://github.com/jakewendt/rdoc_rails"
+		gem.authors = ["Chinasaur","George 'Jake' Wendt"]
+		# gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
+
+		gem.files  = FileList['lib/**/*']
+		gem.files -= FileList['**/versions/*']
+
+		gem.add_dependency('rails', '~> 2')
+		gem.add_dependency('rdoc','~> 2')
+	end
+	Jeweler::GemcutterTasks.new
+rescue LoadError
+	puts "Jeweler (or a dependency) not available. Install it with: gem install jeweler"
+end
+
+

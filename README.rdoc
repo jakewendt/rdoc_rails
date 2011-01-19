@@ -68,3 +68,27 @@ License}[http://creativecommons.org/licenses/by/3.0/us/]. Please credit me
 somewhere in your project's documentation if you are using this.
 
 
+
+
+
+== Dev by Jake
+
+Gemified with Jeweler
+
+rake gemspec
+
+rake version:bump:major
+rake version:bump:minor
+rake version:bump:patch  
+
+rake install
+
+rake release
+
+
+This seems to be incompatible with the latest rdoc 3.4.
+Attempting to remedy.
+Still not working.
+
+
+

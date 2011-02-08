@@ -75,11 +75,11 @@ somewhere in your project's documentation if you are using this.
 
 Gemified with Jeweler
 
-rake gemspec
-
-rake version:bump:major
-rake version:bump:minor
 rake version:bump:patch  
+rake version:bump:minor
+rake version:bump:major
+
+rake gemspec
 
 rake install
 

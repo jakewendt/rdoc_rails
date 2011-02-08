@@ -5,17 +5,18 @@
 
 Gem::Specification.new do |s|
   s.name = %q{jakewendt-rdoc_rails}
-  s.version = "0.0.1"
+  s.version = "0.0.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Chinasaur", "George 'Jake' Wendt"]
-  s.date = %q{2011-01-19}
+  s.date = %q{2011-02-08}
   s.description = %q{longer description of your gem}
   s.email = %q{github@jakewendt.com}
   s.extra_rdoc_files = [
     "README.rdoc"
   ]
   s.files = [
+    "lib/jakewendt-rdoc_rails.rb",
     "lib/rdoc_rails.rb",
     "lib/rdoc_rails/rake.rb",
     "lib/rdoc_rails/rdoc/ar_association.rb",
@@ -28,7 +29,7 @@ Gem::Specification.new do |s|
   ]
   s.homepage = %q{http://github.com/jakewendt/rdoc_rails}
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.4.2}
+  s.rubygems_version = %q{1.5.0}
   s.summary = %q{one-line summary of your gem}
   s.test_files = [
     "test/app/models/blog.rb",
